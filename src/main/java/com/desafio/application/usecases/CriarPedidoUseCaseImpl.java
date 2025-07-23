@@ -4,10 +4,12 @@ import com.desafio.domain.model.Pedido;
 import com.desafio.domain.ports.input.CriarPedidoUseCase;
 import com.desafio.domain.ports.output.PedidoRepository;
 import com.desafio.domain.ports.output.PedidoMessageSender;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
+@Service
 public class CriarPedidoUseCaseImpl implements CriarPedidoUseCase {
 
     private final PedidoRepository repository;

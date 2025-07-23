@@ -1,0 +1,14 @@
+com\desafio\application\usecases\ConsultarPedidoUseCaseImpl.class
+com\desafio\adapters\in\controller\PedidoController.class
+com\desafio\application\usecases\CriarPedidoUseCaseImpl.class
+com\desafio\domain\ports\output\PedidoMessageSender.class
+com\desafio\adapters\out\repository\InMemoryPedidoRepository.class
+com\desafio\domain\model\StatusPedido.class
+com\desafio\domain\ports\input\ConsultarPedidoUseCase.class
+com\desafio\adapters\out\kafka\PedidoKafkaProducer.class
+com\desafio\domain\ports\output\PedidoRepository.class
+com\desafio\PedidoServiceApplication.class
+com\desafio\domain\ports\input\CriarPedidoUseCase.class
+com\desafio\config\KafkaConfig.class
+com\desafio\adapters\in\kafka\PedidoKafkaConsumer.class
+com\desafio\domain\model\Pedido.class

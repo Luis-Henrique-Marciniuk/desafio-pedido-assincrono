@@ -19,6 +19,7 @@ public class PedidoKafkaConsumer {
     @KafkaListener(topics = "pedidos", groupId = "processador-pedidos")
     public void consumir(ConsumerRecord<String, String> record) {
         try {
+            Thread.sleep(2000);
             UUID pedidoId = UUID.fromString(record.key());
             repository.atualizarStatus(pedidoId, true);
             System.out.println("Pedido " + pedidoId + " processado.");
