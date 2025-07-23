@@ -1,31 +1,38 @@
 package com.desafio.adapters.in.controller;
 
-import com.desafio.application.usecases.CriarPedidoUseCaseImpl;
 import com.desafio.domain.model.Pedido;
+import com.desafio.domain.ports.input.CriarPedidoUseCase;
+import com.desafio.domain.ports.input.ConsultarPedidoUseCase;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @RestController
 @RequestMapping("/pedidos")
 public class PedidoController {
 
-    private final CriarPedidoUseCaseImpl pedidoService;
+    private final CriarPedidoUseCase criarPedido;
+    private final ConsultarPedidoUseCase consultarPedido;
 
-    public PedidoController(CriarPedidoUseCaseImpl pedidoService) {
-        this.pedidoService = pedidoService;
+    public PedidoController(CriarPedidoUseCase criarPedido, ConsultarPedidoUseCase consultarPedido) {
+        this.criarPedido = criarPedido;
+        this.consultarPedido = consultarPedido;
     }
 
     @PostMapping
-    public ResponseEntity<Map<String, UUID>> criarPedido(@RequestBody Map<String, Object> body) {
-        String clienteId = (String) body.get("clienteId");
-        List<String> itens = (List<String>) body.get("itens");
-        int prioridade = (int) body.getOrDefault("prioridade", 1);
+    public ResponseEntity<Map<String, UUID>> criarPedido(@RequestBody Map<String, Object> request) {
+        String clienteId = (String) request.get("clienteId");
+        List<String> itens = (List<String>) request.get("itens");
+        int prioridade = (int) request.getOrDefault("prioridade", 1);
 
-        UUID id = pedidoService.criarPedido(clienteId, itens, prioridade);
+        UUID id = criarPedido.criarPedido(clienteId, itens, prioridade);
         return ResponseEntity.ok(Map.of("id", id));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Pedido> consultarPedido(@PathVariable UUID id) {
+        Pedido pedido = consultarPedido.consultarPedido(id);
+        return ResponseEntity.ok(pedido);
     }
 }

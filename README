@@ -1,0 +1,16 @@
+# Sistema de Processamento de Pedidos Assíncrono
+
+Este sistema simula o processamento de pedidos usando uma arquitetura hexagonal e mensageria com Apache Kafka.
+
+## Tecnologias
+- Java 17
+- Spring Boot
+- Apache Kafka
+- Arquitetura Hexagonal
+- Docker + docker-compose
+
+## Como executar
+
+1. Suba o Kafka:
+```bash
+docker-compose up -d
