@@ -34,7 +34,7 @@ public class PedidoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Pedido> consultarPedido(@PathVariable UUID id) {
+    public ResponseEntity<Pedido> consultarPedido(@PathVariable("id") UUID id) {
         Pedido pedido = consultarPedido.consultarPedido(id);
         return ResponseEntity.ok(pedido);
     }
