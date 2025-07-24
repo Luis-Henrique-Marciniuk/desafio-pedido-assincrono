@@ -1,5 +1,6 @@
 package com.desafio.adapters.in.controller;
 
+import com.desafio.adapters.in.controller.dto.PedidoRequestDTO;
 import com.desafio.domain.model.Pedido;
 import com.desafio.domain.ports.input.CriarPedidoUseCase;
 import com.desafio.domain.ports.input.ConsultarPedidoUseCase;
@@ -21,12 +22,14 @@ public class PedidoController {
     }
 
     @PostMapping
-    public ResponseEntity<Map<String, UUID>> criarPedido(@RequestBody Map<String, Object> request) {
-        String clienteId = (String) request.get("clienteId");
-        List<String> itens = (List<String>) request.get("itens");
-        int prioridade = (int) request.getOrDefault("prioridade", 1);
-
-        UUID id = criarPedido.criarPedido(clienteId, itens, prioridade);
+    public ResponseEntity<Map<String, Object>> criarPedido(@RequestBody PedidoRequestDTO request) {
+        // Use os campos do DTO normalmente
+        UUID id = criarPedido.criarPedido(
+                String.valueOf(request.clienteId),
+                // Converta produtos para o formato esperado pelo seu caso de uso
+                Collections.emptyList(), // ajuste conforme sua lógica
+                request.prioridade
+        );
         return ResponseEntity.ok(Map.of("id", id));
     }
 
