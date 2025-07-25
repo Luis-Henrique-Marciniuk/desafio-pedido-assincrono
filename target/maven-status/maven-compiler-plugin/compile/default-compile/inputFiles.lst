@@ -3,11 +3,12 @@ C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\doma
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\adapters\out\repository\InMemoryPedidoRepository.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\domain\ports\input\ConsultarPedidoUseCase.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\domain\model\StatusPedido.java
+C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\adapters\in\controller\dto\PedidoRequest.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\adapters\in\kafka\PedidoKafkaConsumer.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\adapters\out\kafka\PedidoKafkaProducer.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\domain\model\Pedido.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\application\usecases\CriarPedidoUseCaseImpl.java
-C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\adapters\in\controller\dto\PedidoRequestDTO.java
+C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\adapters\in\controller\dto\PedidoResponse.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\PedidoServiceApplication.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\config\KafkaConfig.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\exceptions\PedidoNotFoundException.java

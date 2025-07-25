@@ -1,0 +1,5 @@
+com\desafio\usecases\ConsultarPedidoUseCaseImplTest.class
+com\desafio\PedidoServiceApplicationTests.class
+com\desafio\usecases\CriarPedidoUseCaseImplTest.class
+com\desafio\usecases\PedidoControllerTest.class
+com\desafio\usecases\InMemoryPedidoRepositoryTest.class

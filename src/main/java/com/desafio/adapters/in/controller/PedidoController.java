@@ -62,4 +62,8 @@ public class PedidoController {
                 errors.put(error.getField(), error.getDefaultMessage()));
         return ResponseEntity.badRequest().body(errors);
     }
+    @ExceptionHandler(com.desafio.exceptions.PedidoNotFoundException.class)
+    public ResponseEntity<?> handlePedidoNotFound(com.desafio.exceptions.PedidoNotFoundException ex) {
+        return ResponseEntity.status(404).body(Map.of("error", ex.getMessage()));
+    }
 }
