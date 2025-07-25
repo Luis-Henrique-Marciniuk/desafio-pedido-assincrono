@@ -21,8 +21,18 @@ public class Pedido {
         this.prioridade = prioridade;
     }
 
-    public void marcarProcessado() {
+    public void processar() {
+        if (this.status == StatusPedido.PROCESSADO) {
+            throw new IllegalStateException("Pedido já foi processado");
+        }
         this.status = StatusPedido.PROCESSADO;
     }
 
+    public boolean isProcessado() {
+        return this.status == StatusPedido.PROCESSADO;
+    }
+
+    public boolean isPendente() {
+        return this.status == StatusPedido.PENDENTE;
+    }
 }

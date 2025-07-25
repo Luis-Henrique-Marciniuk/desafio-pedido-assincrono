@@ -28,8 +28,8 @@ public class InMemoryPedidoRepository implements PedidoRepository {
     @Override
     public void atualizarStatus(UUID id, boolean processado) {
         Pedido pedido = pedidos.get(id);
-        if (pedido != null && processado) {
-            pedido.marcarProcessado();
+        if (pedido != null && pedido.isPendente()) {
+            pedido.processar();
         }
     }
 }
