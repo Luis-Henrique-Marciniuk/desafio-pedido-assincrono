@@ -1,16 +1,18 @@
-# Sistema de Processamento de Pedidos Assíncrono
+# desafio-pedido-assincrono
 
-Este sistema simula o processamento de pedidos usando uma arquitetura hexagonal e mensageria com Apache Kafka.
+Sistema backend simples que simula processamento assíncrono de pedidos usando Kafka, com arquitetura hexagonal.
 
 ## Tecnologias
-- Java 17
-- Spring Boot
+
+- Java 17+
+- Spring Boot 3
 - Apache Kafka
-- Arquitetura Hexagonal
-- Docker + docker-compose
+- Docker (para Kafka e Zookeeper)
+- Maven
 
-## Como executar
+## Como rodar localmente
 
-1. Suba o Kafka:
+### 1. Subir Kafka e Zookeeper com Docker Compose
+
 ```bash
 docker-compose up -d

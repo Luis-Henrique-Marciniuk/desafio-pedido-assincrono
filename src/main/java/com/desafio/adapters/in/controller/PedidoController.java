@@ -34,11 +34,8 @@ public class PedidoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PedidoResponse> consultarPedido(@PathVariable UUID id) {
+    public ResponseEntity<PedidoResponse> consultarPedido(@PathVariable("id") UUID id) {
         Pedido pedido = consultarPedido.consultarPedido(id);
-        if (pedido == null) {
-            return ResponseEntity.notFound().build();
-        }
 
         PedidoResponse response = new PedidoResponse(
                 pedido.getId(),
