@@ -1,5 +1,6 @@
 package com.desafio.application.usecases;
 
+import com.desafio.exceptions.PedidoNotFoundException;
 import com.desafio.domain.model.Pedido;
 import com.desafio.domain.ports.input.ConsultarPedidoUseCase;
 import com.desafio.domain.ports.output.PedidoRepository;
@@ -18,6 +19,7 @@ public class ConsultarPedidoUseCaseImpl implements ConsultarPedidoUseCase {
 
     @Override
     public Pedido consultarPedido(UUID id) {
-        return pedidoRepository.buscarPorId(id).orElse(null);
+        return pedidoRepository.buscarPorId(id)
+                .orElseThrow(() -> new PedidoNotFoundException(id));
     }
 }

@@ -7,8 +7,11 @@ C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\adap
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\adapters\out\kafka\PedidoKafkaProducer.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\domain\model\Pedido.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\application\usecases\CriarPedidoUseCaseImpl.java
+C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\adapters\in\controller\dto\PedidoRequestDTO.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\PedidoServiceApplication.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\config\KafkaConfig.java
+C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\exceptions\PedidoNotFoundException.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\domain\ports\output\PedidoRepository.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\adapters\in\controller\PedidoController.java
+C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\exceptions\GlobalExceptionHandler.java
 C:\Users\luis\Documents\desafio-pedido-assincrono\src\main\java\com\desafio\domain\ports\output\PedidoMessageSender.java
