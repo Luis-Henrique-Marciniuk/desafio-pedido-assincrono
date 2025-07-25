@@ -1,5 +1,7 @@
 package com.desafio.adapters.in.controller;
 
+import com.desafio.adapters.in.controller.dto.PedidoRequest;
+import com.desafio.adapters.in.controller.dto.PedidoResponse;
 import com.desafio.domain.model.Pedido;
 import com.desafio.domain.ports.input.CriarPedidoUseCase;
 import com.desafio.domain.ports.input.ConsultarPedidoUseCase;
@@ -22,22 +24,31 @@ public class PedidoController {
     }
 
     @PostMapping
-    public ResponseEntity<Map<String, Object>> criarPedido(@Valid @RequestBody Pedido request) {
+    public ResponseEntity<Map<String, Object>> criarPedido(@Valid @RequestBody PedidoRequest request) {
         UUID id = criarPedido.criarPedido(
-                String.valueOf(request.getClienteId()),
-                Collections.emptyList(),
-                request.getPrioridade()
+                request.clienteId(),
+                request.itens(),
+                request.prioridade()
         );
         return ResponseEntity.ok(Map.of("id", id));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Pedido> consultarPedido(@PathVariable("id") UUID id) {
+    public ResponseEntity<PedidoResponse> consultarPedido(@PathVariable UUID id) {
         Pedido pedido = consultarPedido.consultarPedido(id);
         if (pedido == null) {
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(pedido);
+
+        PedidoResponse response = new PedidoResponse(
+                pedido.getId(),
+                pedido.getClienteId(),
+                pedido.getItens(),
+                pedido.getStatus(),
+                pedido.getPrioridade()
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @ExceptionHandler(org.springframework.web.bind.MethodArgumentNotValidException.class)

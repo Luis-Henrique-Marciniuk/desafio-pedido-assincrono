@@ -1,8 +1,5 @@
 package com.desafio.domain.model;
 
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 
 import java.util.List;
@@ -10,16 +7,11 @@ import java.util.UUID;
 
 @Getter
 public class Pedido {
-    private UUID id;
-    @NotBlank(message = "clienteId não pode ser vazio")
-    private String clienteId;
-
-    @NotEmpty(message = "Lista de itens não pode ser vazia")
-    private List<String> itens;
+    private final UUID id;
+    private final String clienteId;
+    private final List<String> itens;
     private StatusPedido status;
-
-    @Min(value = 1, message = "Prioridade deve ser no mínimo 1")
-    private int prioridade;
+    private final int prioridade;
 
     public Pedido(String clienteId, List<String> itens, int prioridade) {
         this.id = UUID.randomUUID();
@@ -32,4 +24,5 @@ public class Pedido {
     public void marcarProcessado() {
         this.status = StatusPedido.PROCESSADO;
     }
+
 }
