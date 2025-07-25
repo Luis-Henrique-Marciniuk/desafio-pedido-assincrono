@@ -1,6 +1,6 @@
 # 📦 Desafio - Sistema de Processamento de Pedidos Assíncrono
 
-Este projeto consiste em uma API RESTful construída com **Spring Boot**, utilizando **Arquitetura Hexagonal (Ports & Adapters)** e mensageria assíncrona com **Apache Kafka**, simulando o processamento de pedidos de forma desacoplada.
+Este projeto consiste em uma API RESTful construída com Spring Boot, utilizando Arquitetura Hexagonal (Ports & Adapters) e mensageria assíncrona com Apache Kafka, simulando o processamento de pedidos de forma desacoplada.
 
 ---
 
@@ -22,12 +22,12 @@ Este projeto consiste em uma API RESTful construída com **Spring Boot**, utiliz
 
 O projeto adota a **Arquitetura Hexagonal**, separando:
 
-- **Domain**: Regras de negócio e entidades
-- **Application**: Casos de uso (serviços de orquestração)
-- **Adapters**:
-  - `inbound`: Controllers REST
-  - `outbound`: Integrações como Kafka e repositórios
-- **Config**: Beans e configurações da aplicação
+- Domain: Regras de negócio e entidades
+- Application: Casos de uso (serviços de orquestração)
+- Adapters:
+  - inbound: Controllers REST
+  - outbound: Integrações como Kafka e repositórios
+- Config: Beans e configurações da aplicação
 
 ---
 
@@ -65,6 +65,7 @@ Exemplo de Resposta
 {
   "id": "ae9ec953-999a-4039-8e20-10fdcf796114"
 }
+
 🔍 Consultar pedido por ID
 GET /pedidos/{id}
 
@@ -80,5 +81,5 @@ Exemplo de Resposta
 👨‍💻 Autor
 Luis Henrique Marciniuk
 📧 luishmarciniuk@gmail.com
-🔗 LinkedIn
+🔗 www.linkedin.com/in/luis-marciniuk/
 

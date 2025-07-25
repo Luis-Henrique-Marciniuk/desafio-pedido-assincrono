@@ -22,9 +22,8 @@ public class PedidoKafkaConsumer {
             Thread.sleep(2000);
             UUID pedidoId = UUID.fromString(record.key());
             repository.atualizarStatus(pedidoId, true);
-            System.out.println("Pedido " + pedidoId + " processado.");
         } catch (Exception e) {
-            System.err.println("Erro ao processar pedido: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }
