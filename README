@@ -1,18 +1,84 @@
-# desafio-pedido-assincrono
+# 📦 Desafio - Sistema de Processamento de Pedidos Assíncrono
 
-Sistema backend simples que simula processamento assíncrono de pedidos usando Kafka, com arquitetura hexagonal.
+Este projeto consiste em uma API RESTful construída com **Spring Boot**, utilizando **Arquitetura Hexagonal (Ports & Adapters)** e mensageria assíncrona com **Apache Kafka**, simulando o processamento de pedidos de forma desacoplada.
 
-## Tecnologias
+---
 
-- Java 17+
-- Spring Boot 3
+## 🚀 Tecnologias Utilizadas
+
+- Java 17
+- Spring Boot 3.x
+- Spring Web
+- Spring Kafka
 - Apache Kafka
-- Docker (para Kafka e Zookeeper)
-- Maven
+- Docker / Docker Compose
+- Arquitetura Hexagonal (Ports & Adapters)
+- JUnit (para testes)
+- Lombok
 
-## Como rodar localmente
+---
 
-### 1. Subir Kafka e Zookeeper com Docker Compose
+## 🧱 Arquitetura
 
-```bash
+O projeto adota a **Arquitetura Hexagonal**, separando:
+
+- **Domain**: Regras de negócio e entidades
+- **Application**: Casos de uso (serviços de orquestração)
+- **Adapters**:
+  - `inbound`: Controllers REST
+  - `outbound`: Integrações como Kafka e repositórios
+- **Config**: Beans e configurações da aplicação
+
+---
+
+## 📦 Funcionalidades
+
+- ✅ Criar novo pedido (POST /pedidos)
+- ✅ Processar pedido de forma assíncrona via Kafka
+- ✅ Consultar status de pedido (GET /pedidos/{id})
+- ✅ Retorno estruturado com mensagens e códigos HTTP
+- ✅ Validações de campos com mensagens claras
+
+
+## ⚙️ Como Executar Localmente
+
+### 1. Clonar o repositório
+git clone https://github.com/Luis-Henrique-Marciniuk/desafio-pedido-assincrono.git
+cd desafio-pedido-assincrono
+
+2. Subir Apache Kafka com Docker Compose
 docker-compose up -d
+
+3. Rodar a aplicação Spring Boot
+./mvnw spring-boot:run
+
+📡 Endpoints da API
+✅ Criar novo pedido
+POST /pedidos
+
+Exemplo de Requisição
+{
+  "produto": "Notebook Lenovo",
+  "quantidade": 2
+}
+Exemplo de Resposta
+{
+  "id": "ae9ec953-999a-4039-8e20-10fdcf796114"
+}
+🔍 Consultar pedido por ID
+GET /pedidos/{id}
+
+Exemplo de Resposta
+{
+  "id": "ae9ec953-999a-4039-8e20-10fdcf796114",
+  "produto": "Notebook Lenovo",
+  "quantidade": 2,
+  "status": "PROCESSADO"
+}
+
+
+👨‍💻 Autor
+Luis Henrique Marciniuk
+📧 luishmarciniuk@gmail.com
+🔗 LinkedIn
+
